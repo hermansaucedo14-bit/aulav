@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Matriculados - Universidad Virtual</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container my-5">
+    <h2 class="text-center text-primary">Lista de Matriculados</h2>
+
+    <div class="d-flex justify-content-between mb-3">
+      <div>
+        <button class="btn btn-primary" id="btnJson">Exportar JSON</button>
+        <button class="btn btn-danger" id="btnPdf">Exportar PDF</button>
+      </div>
+      <div>
+        <small class="text-muted">Registros en localStorage: <span id="countRegistro">0</span></small>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered" id="tablaMatriculados">
+        <thead class="table-dark">
+          <tr>
+            <th>Nombre</th>
+            <th>DNI</th>
+            <th>Email</th>
+            <th>Programa</th>
+            <th>Modalidad</th>
+            <th>Ciclo</th>
+            <th>Asignaturas</th>
+            <th>Créditos</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- librerías: primero jsPDF, luego plugin autoTable, luego tu script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

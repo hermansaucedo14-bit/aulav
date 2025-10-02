@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Matrícula - Universidad Virtual</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container my-5">
+    <h2 class="text-center text-primary">Formulario de Matrícula</h2>
+    <form id="formMatricula" class="p-4 shadow rounded bg-light">
+      <div class="mb-3">
+        <label class="form-label">Nombre del Estudiante</label>
+        <input type="text" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">DNI</label>
+        <input type="text" class="form-control" required pattern="[0-9]{8}">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email Institucional</label>
+        <input type="email" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Programa</label>
+        <select class="form-select" required>
+          <option value="">Seleccione...</option>
+          <option>Ingeniería de Sistemas</option>
+          <option>Administración</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Modalidad</label><br>
+        <input type="radio" name="modalidad" value="Presencial" required> Presencial
+        <input type="radio" name="modalidad" value="Virtual"> Virtual
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Ciclo</label>
+        <select class="form-select" required>
+          <option value="">Seleccione...</option>
+          <option>I</option>
+          <option>II</option>
+          <option>X</option>
+        </select>
+      </div>
+
+      <h5>Asignaturas (mínimo 3, máximo 7)</h5>
+      <div id="asignaturas">
+        <div><input type="checkbox" value="Matemáticas-4"> Matemáticas (4 créditos)</div>
+        <div><input type="checkbox" value="Programación-5"> Programación (5 créditos)</div>
+        <div><input type="checkbox" value="Redes-3"> Redes (3 créditos)</div>
+        <div><input type="checkbox" value="IA-4"> Inteligencia Artificial (4 créditos)</div>
+        <div><input type="checkbox" value="Administración-3"> Administración (3 créditos)</div>
+      </div>
+
+      <p class="mt-2">Créditos totales: <span id="creditos">0</span></p>
+
+      <button type="submit" class="btn btn-success">Registrar Matrícula</button>
+    </form>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
